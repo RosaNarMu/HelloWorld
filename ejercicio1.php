@@ -40,9 +40,9 @@ $saludo = 'Hello world!';
       <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
         <div class="card-body">
           <?php
-          $ejercicio1 = date('N');
+          $ejercicio1Dia = date('N');
 
-          switch ($ejercicio1) {
+          switch ($ejercicio1Dia) {
             case 1:
               echo 'Hoy es lunes, no es fin de semana';
               break;
@@ -84,10 +84,10 @@ $saludo = 'Hello world!';
       <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
         <div class="card-body">
           <?php
-          $ejercicio2 = date('L');
+          $ejercicio2Bisiesto = date('L');
           $ejercicio2Año = date('o');
 
-          if ($ejercicio2 == 0) {
+          if ($ejercicio2Bisiesto == 0) {
             echo "$ejercicio2Año no es un año bisiesto";
           } else {
             echo "$ejercicio2Año es un año bisiesto";
@@ -134,12 +134,47 @@ $saludo = 'Hello world!';
         <div class="card-body">
           <?php
 
-          $ejercicio3Mes = date('F');
-          $ejercicio3DiasMes = date('t');
+          $ejercicio4Notas = array(55, 71, 76, 87);
 
-          echo "Estamos en el mes $ejercicio3Mes, el cual tiene $ejercicio3DiasMes días";
+          $ejercicio4Media = array_sum($ejercicio4Notas) / count($ejercicio4Notas);
 
-          //alternativa, hacer un switch como en el ejercicio1
+          if ($ejercicio4Media < 50) {
+            echo "El alumno está suspenso con una nota de $ejercicio4Media";
+          } else if ($ejercicio4Media >= 50) {
+            echo "El alumno está aprobado con una nota de $ejercicio4Media.";
+          }
+
+          if ($ejercicio4Media >= 90) {
+            echo " Además, ha conseguido matrícula de honor.";
+          }
+
+
+
+          ?>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header" id="headingThree">
+        <h2 class="mb-0">
+          <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            5. Escribir un programa que dada la temperatura en grados celsius o farenheit la convierta a la otra escala, teniendo en cuenta que para converir de Celsius a Fahrenheit, primero multiplica por 180/100, después suma 32 y para convertir de Fahrenheit a Celsius, primero resta 32, después multiplica por 100/180.
+          </button>
+        </h2>
+      </div>
+      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+        <div class="card-body">
+          <?php
+
+
+          $ejercicio5Temp = 25;
+
+          echo "La temperatura es de $ejercicio5Temp grados";
+
+
+
+
 
           ?>
         </div>
